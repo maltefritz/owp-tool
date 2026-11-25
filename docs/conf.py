@@ -4,7 +4,10 @@ import sys
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath(os.path.join('..', 'src')))
+
+# The version is only defined in the package itself
+from owp_tool import __version__  # noqa: E402
 
 # -- General configuration ------------------------------------------------
 
@@ -38,15 +41,15 @@ mathjax3_config = {
 # landing page
 # master_doc = 'contents'
 # names, years, etc
-project = 'owp_milp_optimization'
+project = 'owp-tool'
 year = '2024-2026'
 author = 'Malte Fritz & Jonas Freißmann'
 copyright = '{0}, {1}'.format(year, author)
 
 # The short X.Y version.
-version = 'v0.0.6'
+version = f'v{__version__}'
 # The full version, including alpha/beta/rc tags.
-release = 'v0.0.6'
+release = f'v{__version__}'
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -68,7 +71,7 @@ exclude_patterns = ['_build']
 bibtex_bibfiles = ['references.bib']
 
 # links to github
-github_repo_url = "https://github.com/maltefritz/owp_milp_optimization"
+github_repo_url = "https://github.com/maltefritz/owp-tool"
 extlinks = {
     "issue": (f"{github_repo_url}/issues/%s", "#%s"),  # noqa: WPS323
     "pr": (f"{github_repo_url}/pull/%s", "PR #%s"),  # noqa: WPS323
@@ -144,7 +147,7 @@ copybutton_prompt_text = r'>>> |\.\.\. '
 copybutton_prompt_is_regexp = True
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'owp_milp_optimization_doc'
+htmlhelp_basename = 'owp_tool_doc'
 
 # -- Options for linkcheck ----------------------------------------------
 

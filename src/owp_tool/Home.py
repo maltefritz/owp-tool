@@ -3,7 +3,7 @@ import os
 
 import pandas as pd
 import streamlit as st
-from helpers import footer, load_icon_base64s
+from helpers import footer, load_icon_base64s, read_license
 from streamlit import session_state as ss
 
 st.set_page_config(
@@ -101,7 +101,7 @@ st.write(
 
 # _, col_partner, _ = st.columns([0.1 ,0.8, 0.1])
 logo_partner = os.path.join(
-    os.path.dirname(__file__), 'img',  'Logos_Partner_neu.svg'
+    os.path.dirname(__file__), 'img',  'Logos_Partner.svg'
     )
 # col_partner.image(logo_partner, width='stretch')
 st.image(logo_partner, width='stretch')
@@ -176,11 +176,13 @@ with st.expander('Disclaimer'):
         )
 
 with st.expander('Copyright'):
-    licpath = os.path.abspath(os.path.join(
-        os.path.dirname(__file__), '..', '..', 'LICENSE'
-        ))
-    with open(licpath, 'r', encoding='utf-8') as file:
-        lictext = file.read()
+    lictext = read_license()
+    if lictext is None:
+        lictext = (
+            'Der Lizenztext ist [auf GitHub]'
+            '(https://github.com/maltefritz/owp-tool/blob/main/'
+            'LICENSE) einsehbar.'
+            )
 
     st.success('#### Softwarelizenz\n' + lictext.replace('(c)', '©'))
 

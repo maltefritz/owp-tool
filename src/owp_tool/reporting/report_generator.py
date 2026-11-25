@@ -12,12 +12,12 @@ import altair as alt
 import pandas as pd
 from jinja2 import Template
 
-from owp_milp_optimization.charts import (create_dispatch_timeseries_chart,
-                                          create_el_prod_grid_chart,
-                                          create_el_prod_internal_chart,
-                                          create_heat_production_chart,
-                                          create_ordered_duration_line_chart,
-                                          create_tes_content_chart)
+from owp_tool.charts import (create_dispatch_timeseries_chart,
+                             create_el_prod_grid_chart,
+                             create_el_prod_internal_chart,
+                             create_heat_production_chart,
+                             create_ordered_duration_line_chart,
+                             create_tes_content_chart)
 
 from .styling import REPORT_CSS
 from .templates import (get_chart_section_template, get_kpi_card_template,
