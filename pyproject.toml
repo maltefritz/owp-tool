@@ -5,7 +5,7 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "owp-tool"
 description = "District heating system unit design and dispatch optimization dashboard using Mixed Integer Linear Programming (MILP)."
-dynamic = ["version"]
+version = "v0.1.0"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
